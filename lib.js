@@ -6,11 +6,17 @@ lib.generateHeading1 = function(text) {
 }
 
 lib.generateHeading = function(level, text) {
-    return "not yet implemented"
+    return "<h" + level + ">" + text + "</h" + level + ">"
 }
 
 lib.generateOrderedList = function(arrayOfText) {
-    return "not yet implemented"
+ 	var myString = "<ol>";
+ 	for(var i = 0; i < arrayOfText.length; i++)
+ 	{
+ 		myString += "<li>" + arrayOfText[i] + "</li>";
+ 	}
+ 	myString += "</ol>";
+ 	return myString
 }
 
 lib.generateUnorderedList = function(arrayOfText) {
@@ -31,7 +37,7 @@ lib.generateTable = function(twoDimensionalArrayOfText) {
 }
 
 lib.generateHyperLink = function(url, text) {
-    return "not yet implemented"
+    return "<a href'" + url + "'>" + text + "</a>"
 }
 
 lib.generateFormTextField = function(name) {
@@ -43,7 +49,7 @@ lib.generateFormTextField = function(name) {
 }
 
 lib.generateFormTextFieldWithLabel = function(name, label) {
-    return "not yet implemented"
+    return '<label>' + label + '</label> <input type="text" name="'name+'">'
 }
 
 lib.generateDropdownList = function(arrayOfValues, arrayOfText) {
