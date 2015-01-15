@@ -29,11 +29,17 @@ lib.generateUnorderedList = function(arrayOfText) {
 }
 
 lib.generateTableRow = function (arrayOfText) {
-    return "not yet implemented"
+    var table = ''
+    for (var i = 0; i < arrayOfText.length; i++) {
+        table += '<td>' + arrayOfText[i] + '</td>'
+    }
+    return table
 }
 
 lib.generateTable = function(twoDimensionalArrayOfText) {
-    return "not yet implemented"
+    var table = '<tr>'
+    table += lib.generateTableRow(twoDimensionalArrayOfText[1])
+    return table + '</tr>'
 }
 
 lib.generateHyperLink = function(url, text) {
@@ -41,19 +47,23 @@ lib.generateHyperLink = function(url, text) {
 }
 
 lib.generateFormTextField = function(name) {
-    return "not yet implemented"
+    return '<input type="text" name="' + name + '">'
 }
 
 lib.generateFormTextField = function(name) {
-    return "not yet implemented"
+    return '<input type="text" name="' + name + '">'
 }
 
 lib.generateFormTextFieldWithLabel = function(name, label) {
-    return '<label>' + label + '</label> <input type="text" name="'name+'">'
+    return '<label>' + label + '</label> <input type="text" name="'+name+'">'
 }
 
 lib.generateDropdownList = function(arrayOfValues, arrayOfText) {
-    return "not yet implemented"
+    var dropdown = '<select>'
+    for(var i = 0; i < arrayOfValues.length; i++) {
+        dropdown += '<option value="' + arrayOfValues[i] + '">' + arrayOfText[i] + '</option>'
+    }
+    return dropdown + '</select>'
 }
 
 lib.generateYoutubeVideoEmbeddableFrame = function(width, height, videoId, allowfullscreen) {
